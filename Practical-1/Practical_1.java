@@ -1,4 +1,6 @@
 import java.util.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Practical_1 {
     // counter variables for each function
@@ -46,7 +48,7 @@ public class Practical_1 {
         }
         return n + sumRecursion(n-1);
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         // Scanner sc = new Scanner(System.in);
         // System.out.print("Enter the number n : ");
         // int n = sc.nextInt();
@@ -69,6 +71,9 @@ public class Practical_1 {
 
         int[] inputs = {100, 200, 300, 400, 500};
 
+        FileWriter writer = new FileWriter("steps_output.txt");
+        writer.write("Input,Loop,Equation,Recursion\n");
+
         System.out.printf("%-10s %-15s %-15s %-15s", "Input", "Loop Method", "Equations", "Recursion");
         System.out.println();
 
@@ -78,8 +83,12 @@ public class Practical_1 {
             recCount = 0;
             sumRecursion(n);
 
+            writer.write(n + "," + loopCount + "," + eqCount + "," + recCount + "\n");
+
             System.out.printf("%-10d %-15d %-15d %-15d", n, loopCount, eqCount, recCount);
             System.out.println();
         }
+
+        writer.close();
     }
 }
