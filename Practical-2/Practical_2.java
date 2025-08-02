@@ -55,15 +55,15 @@ public class Practical_2 {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             steps++;
-            int key = arr[i];
+            int current = arr[i];
             int j = i - 1;
             steps++;
-            while (j >= 0 && arr[j] > key) {
+            while (j >= 0 && current < arr[j]) {
                 arr[j + 1] = arr[j];
                 j--;
                 steps += 2;
             }
-            arr[j + 1] = key;
+            arr[j + 1] = current;
             steps++;
         }
     }
@@ -171,11 +171,11 @@ public class Practical_2 {
             writer.write("Input,Selection,Bubble,Insertion,Merge,Quick\n");  // CSV-style header
 
                 for (int size : sizes) {
-                int[] original = switch (type) {
-                    case "Ascending" -> generateAscendingArray(size);
-                    case "Descending" -> generateDescendingArray(size);
-                    default -> generateRandomArray(size);
-                };
+                    int[] original = switch (type) {
+                        case "Ascending" -> generateAscendingArray(size);
+                        case "Descending" -> generateDescendingArray(size);
+                        default -> generateRandomArray(size);
+                    };
 
                     int[] a, b, c, d, e;
 
@@ -199,11 +199,18 @@ public class Practical_2 {
                     quickSort(e);
                     long qui = steps;
 
+                    
                     System.out.printf("%-10d %-10d %-10d %-10d %-10d %-10d\n", size, sel, bub, ins, mer, qui);
-
+                    
                     // Write to file
                     writer.write(size + "," + sel + "," + bub + "," + ins + "," + mer + "," + qui + "\n");
+
                 }
+                // // Append time complexity row to the file
+                // writer.write("TimeComp,O(n^2),O(n^2),O(n^2),O(n log n),O(n log n)\n");
+
+                // // Append time complexity row to the console
+                // System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s\n", "TimeComp", "O(n^2)", "O(n^2)", "O(n^2)", "O(n log n)", "O(n log n)");
             }
         }
     }
