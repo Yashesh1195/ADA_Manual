@@ -1,0 +1,6 @@
+Input Size,Linear Steps,Binary Steps
+100,51,14
+200,101,13
+300,151,21
+400,201,20
+500,251,28
