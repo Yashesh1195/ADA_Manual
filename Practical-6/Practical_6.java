@@ -132,6 +132,6 @@ public class Practical_6 {
             }
         }
 
-        System.out.println("All data saved to random.txt, ascending.txt, and descending.txt");
+        // System.out.println("All data saved to random.txt, ascending.txt, and descending.txt");
     }
 }

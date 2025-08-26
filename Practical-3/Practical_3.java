@@ -47,7 +47,7 @@ public class Practical_3 {
         int[] sizes = {1000, 2000, 3000, 4000, 5000};
 
         try {
-            FileWriter writer = new FileWriter("SequentialSearchSteps.txt");
+            FileWriter writer = new FileWriter("sequential_search_steps.txt");
 
             // Writing Header
             writer.write("Inputs"+","+"Best Case"+","+"Average Case"+","+"Worst Case\n");

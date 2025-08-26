@@ -51,13 +51,13 @@ public class Practical_5 {
                 fibonacci_rec(n);
 
                 // Console Output
-                System.out.printf("%17d | %15d | %15d\n", n, stepsIter, stepsRec);
+                System.out.printf("%17d | %15d | %14d\n", n, stepsIter, stepsRec);
 
                 // File Output
                 writer.write(n + "," + stepsIter + "," + stepsRec + "\n");
             }
 
-            System.out.println("\nData successfully written to: " + filename);
+            // System.out.println("\nData successfully written to: " + filename);
 
         } catch (IOException e) {
             System.out.println("An error occurred while writing the file: " + e.getMessage());
